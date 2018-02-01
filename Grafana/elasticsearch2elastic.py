@@ -84,7 +84,7 @@ def fetch_indexstats(clusterName):
 def post_data(data):
     utc_datetime = datetime.datetime.utcnow()
     url_parameters = {'cluster': elasticMonitoringCluster, 'index': elasticIndex,
-        'index_period': utc_datetime.strftime("%Y.%m.%d"), }
+        'index_period': utc_datetime.strftime("%Y.%m"), }
     url = "%(cluster)s/%(index)s-%(index_period)s/message" % url_parameters
     headers = {'content-type': 'application/json'}
     try:
